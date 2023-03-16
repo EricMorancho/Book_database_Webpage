@@ -1,7 +1,7 @@
 <template>
     
         <div class="card ">
-            <RouterLink :to="{name: 'bookInfo', params:{id: 1 } }">
+            <RouterLink :to="{name: 'bookInfo', params:{ title: lib.title } }">
                 
                 <img :src="`https://covers.openlibrary.org/b/isbn/${lib.canonical_isbn}-M.jpg`" alt="Book cover" @error="errorImg">
                 <h3>{{ lib.title }}</h3>
@@ -15,7 +15,6 @@
 
 <script setup>
 import img from '@/assets/cover_not_avayable.jpg'
-import BookInfo from './BookInfo.vue';
    
 const props = defineProps({
     lib: Object

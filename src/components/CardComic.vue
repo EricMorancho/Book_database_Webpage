@@ -1,14 +1,10 @@
 <template>
-    
     <div class="card ">
-        <div>
+        <RouterLink :to="{name: 'comicInfo', params: {id: marvel.id}}">
             <img :src="marvel.thumbnail.path+'.'+marvel.thumbnail.extension " alt="">
             <h3>{{ marvel.title }}</h3>
-        </div>   
+        </RouterLink>   
     </div>
-    
-
-
 </template>
 
 <script setup>

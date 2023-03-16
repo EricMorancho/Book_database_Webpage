@@ -12,6 +12,7 @@
 		</form>
        
 		<main>
+			
 			<div class="cards">
 				<CardManga v-for="(anime, index) in animeList2" :key="index"
 				:anime="anime"/>
@@ -23,8 +24,9 @@
 </template>
   
 <script setup>
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 import CardManga from '@/components/CardManga.vue';
+
 
 
 let search_query = ref('');
@@ -117,7 +119,7 @@ strong {
 	border: none;
 	outline: none;
 
-	background-color: #F3f3f3;
+	background-color: rgb(223, 216, 216);
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 
 	display: block;

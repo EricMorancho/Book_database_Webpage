@@ -22,9 +22,29 @@ const routes = [
     component: () => import(/* webpackChunkName: "mangaInfo" */ '../views/MangaInfoView.vue')
   },
   {
-    path: '/bookInfo/:id',
+    path: '/bookInfo/:title',
     name: 'bookInfo',
     component: () => import(/* webpackChunkName: "bookInfo" */ '../views/BookInfoView.vue')
+  },
+  {
+    path: '/comicInfo/:id',
+    name: 'comicInfo',
+    component: () => import(/* webpackChunkName: "comicInfo" */ '../views/ComicInfoView.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "Login" */ '../views/LoginView.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import(/* webpackChunkName: "register" */ '../views/RegisterView.vue')
+  },
+  {
+    path: '/Logout',
+    name: 'Logout',
+    component: () => import(/* webpackChunkName: "Logout" */ '../views/LogoutView.vue')
   }
 ]
 

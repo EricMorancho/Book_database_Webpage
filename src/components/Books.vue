@@ -116,7 +116,7 @@ strong {
 	border: none;
 	outline: none;
 
-	background-color: #F3f3f3;
+	background-color: rgb(223, 216, 216);
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 
 	display: block;
