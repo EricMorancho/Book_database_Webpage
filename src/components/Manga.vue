@@ -24,10 +24,13 @@
 </template>
   
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import CardManga from '@/components/CardManga.vue';
+import { useRouter } from 'vue-router';
+import { mapState } from '@/lib';
 
-
+const router = useRouter()
+const {user, anonymous} = mapState()
 
 let search_query = ref('');
 let animeList = ref('');
@@ -62,14 +65,11 @@ const showMore = async () => {
 	.catch(err => console.error(err));
 }
 
-
-
-
-
-
-
-
-
+onMounted(() => {
+    if (user.value == null && anonymous.value == false) {
+        router.push({ path: '/Login' })
+    }
+})
 
 
 </script>

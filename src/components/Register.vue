@@ -49,7 +49,7 @@ let error = ref(null)
 const handlesubmit = async () => {
     try {
         await store.dispatch('signup', { email: email.value, password: password.value })
-        router.push('/')
+        router.push('/books')
     } catch (err) {
         error.value = err.message
         console.log('error')

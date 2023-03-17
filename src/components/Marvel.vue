@@ -34,11 +34,12 @@
   
 <script setup>
 import CardComic from '@/components/CardComic.vue'
-
-
-
 import { onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { mapState } from '@/lib';
 
+const router = useRouter()
+const {user, anonymous} = mapState()
 
 
 let comicList = ref('');
@@ -81,6 +82,12 @@ const showMore = async () => {
 	})
 	.catch(err => console.error(err));
 }
+
+onMounted(() => {
+    if (user.value == null && anonymous.value == false) {
+        router.push({ path: '/Login' })
+    }
+})
 
 
 </script>

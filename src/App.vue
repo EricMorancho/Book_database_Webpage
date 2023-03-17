@@ -20,7 +20,7 @@
     </div>
   </nav>
   <nav>
-    <router-link to="/">Books</router-link> |
+    <router-link to="/books">Books</router-link> |
     <router-link to="/manga">Manga</router-link> |
     <router-link to="/marvel">Marvel</router-link>
   </nav>
@@ -36,16 +36,22 @@ import { useStore } from 'vuex'
 const store = useStore()
 
 const { user, anonymous, register } = mapState()
+const { uncheckRegister } = mapMutations()
 
 
-
+//Preserva el usuario cuando se recarga la página, pero causa problemas con "Anonymous login"
+/*
 onMounted(() => {
-  const unsub = auth.onAuthStateChanged(user => {
+    const unsub = auth.onAuthStateChanged(user => {
     store.commit('setAuthIsReady', true)
     store.commit('setUser', user)
+    if(user){
+      uncheckRegister()
+    }
     unsub()
   })
-})
+  console.log('userInfo'+user.value)
+})*/
 
 
 </script>

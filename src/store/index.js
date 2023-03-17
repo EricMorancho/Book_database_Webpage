@@ -39,8 +39,11 @@ export default createStore({
       state.anonymous = false
     },
     uncheckRegister(state){
-      state.register = !state.register
-    }
+      state.register = false
+    },
+    checkRegister(state){
+      state.register = true
+    },
   },
   actions: {
     async signup(context, {email, password}){

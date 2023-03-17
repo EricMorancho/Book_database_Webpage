@@ -8,15 +8,18 @@
 <script setup>
     import { useStore } from 'vuex';
     import { mapMutations } from '@/lib';
+    import { useRouter } from 'vue-router';
 
     const store = useStore()
+    const router = useRouter()
 
-    const { uncheckAnonymous, uncheckRegister } = mapMutations()
+    const { uncheckAnonymous, checkRegister } = mapMutations()
 
     const handleClick = () => {
         store.dispatch('logout')
         uncheckAnonymous()
-        uncheckRegister()
+        checkRegister()
+        router.push('/')
     }
 
 

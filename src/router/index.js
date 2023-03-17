@@ -3,6 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
+    name: 'home',
+    component: () => import(/* webpackChunkName: "books" */ '../views/HomeView.vue')
+  },
+  {
+    path: '/books',
     name: 'books',
     component: () => import(/* webpackChunkName: "books" */ '../views/BooksView.vue')
   },

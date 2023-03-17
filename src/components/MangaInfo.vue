@@ -1,5 +1,8 @@
 <template>
     <div>
+       <h4 v-if="!user">Login into your account in order to see the content</h4> 
+    </div>
+    <div v-if="user && !anonymous">
         <img :src="imagen" alt="">
 
         <p><span>TITLE: </span>{{mangaInfo2.title}}</p>
@@ -9,16 +12,17 @@
         <p><span>CHAPTERS: </span>{{mangaInfo2.chapters}}</p>
         <p><span>STATUS: </span>{{mangaInfo2.status}}</p>
         <a :href="mangaInfo2.url" target="_blank"><h5>Link to MyAnimeList</h5></a>
-        <button class="btn btn-dark mt-5"><RouterLink to="/manga" class="text-white">Go back to Manga</RouterLink></button>
-        <p v-for="arr in array">{{ arr.chapters }}</p>
     </div>
+    <button class="btn btn-dark mt-5"><RouterLink to="/manga" class="text-white">Go back to Manga</RouterLink></button>
 </template>
 
 <script setup>
     import { onMounted, ref, reactive } from 'vue';
     import { useRoute } from 'vue-router';
+    import { mapState } from '@/lib';
 
     const route = useRoute();
+    const {user, anonymous} = mapState()
 
     let mangaInfo = ref('');
     let mangaInfo2 = ref('');
@@ -33,15 +37,9 @@
             mangaInfo2.value = mangaInfo.value.data
             console.log(mangaInfo2.value)
             imagen.value = mangaInfo2.value.images.jpg.image_url
-            addToFavourites()
         })
     })
 
-    const addToFavourites = () => {
-        array.push(mangaInfo2.value);
-        console.log(array)
-        
-    }
 </script>
 
 <style scoped>

@@ -1,5 +1,8 @@
 <template>
-    <div v-for="books in bookInfo2">
+    <div>
+       <h4 v-if="!user">Login into your account in order to see the content</h4> 
+    </div>
+    <div v-for="books in bookInfo2" v-if="user && !anonymous">
         <img :src="`https://covers.openlibrary.org/b/isbn/${books.canonical_isbn}-M.jpg`" alt="Book cover" @error="errorImg">
         
         <p><span>TITLE: </span>{{ books.title }}</p>
@@ -9,10 +12,8 @@
         <p><span>COPYRIGHT:</span>{{ books.copyright }}</p>
         
         <a :href="`https://www.isbnsearcher.com/books/${books.canonical_isbn}`" target="_blank"><h5>Link to ISBN Search</h5></a>
-
-        <button class="btn btn-dark mt-5"><RouterLink to="/" class="text-white">Go back to Books</RouterLink></button>
-
     </div>
+    <button class="btn btn-dark mt-5"><RouterLink to="/books" class="text-white">Go back to Books</RouterLink></button>
 </template>
 
 <script setup>

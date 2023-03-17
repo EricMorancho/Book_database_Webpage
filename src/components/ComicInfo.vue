@@ -1,5 +1,8 @@
 <template>
-    <div class="container">
+    <div>
+       <h4 v-if="!user">Login into your account in order to see the content</h4> 
+    </div>
+    <div class="container" v-if="user && !anonymous">
         <div class="row">
 
             <div v-for="comic in comicList2">
@@ -30,19 +33,19 @@
                 <div v-for="url in comic.urls" class="mt-5">
                     <a :href="url.url" target="_blank"><h5>Link to {{ url.type }}</h5></a>
                 </div>
-
-                <button class="btn btn-dark mt-5"><RouterLink to="/marvel" class="text-white">Go back to Comics</RouterLink></button>
             </div>
-
         </div>
     </div>
+    <button class="btn btn-dark mt-5"><RouterLink to="/marvel" class="text-white">Go back to Comics</RouterLink></button>
 </template>
 
 <script setup>
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import { mapState } from '@/lib';
 
 const route = useRoute();
+const { user, anonymous} = mapState()
 
 let comicList2 = ref('');
 

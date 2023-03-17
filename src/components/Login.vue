@@ -1,19 +1,26 @@
 <template>
-    <div>
-        <h2>Login Page</h2>
         <div class="container">
             <div class="row">
-                <form @submit.prevent="submit" class="col-6">
+                <form @submit.prevent="submit" class="col-6 normalLogin">
+                    <div>
+                        <h5 class="mb-4 mt-5">Login into your account:</h5>
+
+                        <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Search for Books</ul>
+                        <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Search for Manga</ul>
+                        <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Search for Marvel Comics</ul>
+                        <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Full access to Books information</ul>
+                        <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Full access to Manga information</ul>
+                        <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Full access to Marvel Comics information
+                        </ul>
+                    </div>
                     <!-- Email input -->
-                    <div class="form-outline mb-4">
-                        <input type="text" name="username" class="form-control" v-model="email" required />
-                        <label class="form-label">Username</label>
+                    <div class="form-outline mb-4 mt-5">
+                        <input type="text" name="username" class="form-control" placeholder="email" v-model="email" required />
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" name="password" class="form-control" v-model="password" />
-                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Password" v-model="password" />
                     </div>
 
                     <!-- 2 column grid layout for inline styling -->
@@ -45,26 +52,41 @@
 
                 </form>
 
-                <div class="col-6">
-                    <button @click="anonymousLogin()" v-if="!anonymous">Anonymous identification</button>
+                <div class="col-6 anonymousLogin">
+                    <div>
+                        <h5 class="mb-4 mt-5">Login Anonymously:</h5>
+
+                        <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Search for Books</ul>
+                        <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Search for Manga</ul>
+                        <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Search for Marvel Comics</ul>
+                        <ul><img src="@/assets/crosscircleflat_106051.svg" alt=""> Full access to Books information</ul>
+                        <ul><img src="@/assets/crosscircleflat_106051.svg" alt=""> Full access to Manga information</ul>
+                        <ul><img src="@/assets/crosscircleflat_106051.svg" alt=""> Full access to Marvel Comics information
+                        </ul>
+                    </div>
+                    <button @click="anonymousLogin()" v-if="!anonymous" class="mt-5">Anonymous identification</button>
                 </div>
             </div>
         </div>
 
 
-    </div>
+  
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex'
 import { mapState, mapMutations } from '@/lib';
 
-const { user, anonymous } = mapState()
+
+
+const { anonymous } = mapState()
 const { checkAnonymous, uncheckAnonymous, uncheckRegister } = mapMutations()
 const store = useStore()
 const router = useRouter()
+
+
 
 let email = ref('');
 let password = ref('');
@@ -73,6 +95,7 @@ let error = ref(null)
 const anonymousLogin = async () => {
     try {
         await store.dispatch('anonymous')
+        router.push('/books')
     } catch (err) {
         error.value = err.message
         console.log('error')
@@ -84,14 +107,10 @@ const anonymousLogin = async () => {
 }
 
 
-
-
-
-
 const handlesubmit = async () => {
     try {
         await store.dispatch('login', { email: email.value, password: password.value })
-        router.push('/')
+        router.push('/books')
     } catch (err) {
         error.value = err.message
         console.log('error')
@@ -103,7 +122,15 @@ const initializeUser = () => {
     uncheckRegister()
 }
 
-
-
-
 </script>
+
+<style>
+    .normalLogin {
+        background-color: rgb(241, 200, 185);
+    }
+
+    .anonymousLogin {
+        background-color: rgb(177, 241, 241);
+    }
+
+</style>
