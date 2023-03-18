@@ -4,7 +4,7 @@
             <RouterLink :to="{name: 'bookInfo', params:{ title: lib.title } }">
                 
                 <img :src="`https://covers.openlibrary.org/b/isbn/${lib.canonical_isbn}-M.jpg`" alt="Book cover" @error="errorImg">
-                <h3>{{ lib.title }}</h3>
+                <h3><strong>{{ lib.title }}</strong></h3>
                 <h3 v-for="author in lib.authors">{{ author }}</h3> 
             </RouterLink>   
         </div>
@@ -39,9 +39,10 @@ const errorImg = (e) => {
 
     img {
             width: 100%;
-            height: auto;
+            height: 40rem;
             object-fit: cover;
             border-radius: 16px;
+            margin-top: 1rem;
             box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.15);
             transition: 0.4s;
         }
@@ -57,6 +58,10 @@ const errorImg = (e) => {
 
     h3:hover {
         color: #24C444;
+    }
+
+    a {
+        text-decoration: none;
     }
 
     

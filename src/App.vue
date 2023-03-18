@@ -1,30 +1,32 @@
 <template>
-  <nav class="conainer">
-    <div class="row">
-      <div class="col-12 offset-5" v-if="register">
-        <router-link to="/login">Login</router-link> /
-        <router-link to="/register"> Register</router-link>
+  <div class="back">
+    <nav class="container">
+      <div class="row">
+        <div class="col-12 offset-5" v-if="register">
+          <router-link to="/login">Login</router-link> /
+          <router-link to="/register"> Register</router-link>
 
-      </div>
-      <div class="col-12 offset-4" v-if="user && !anonymous">
-        <span>Log in as: {{ user.email }} /</span>
-        
-        <router-link to="/Logout"> Log Out</router-link>
-      </div>
+        </div>
+        <div class="col-12 offset-4" v-if="user && !anonymous">
+          <span>Log in as: {{ user.email }} /</span>
 
-      <div class="col-12 offset-4" v-if="anonymous">
-        <span>Log in as: Anonymous /</span>
-        
-        <router-link to="/Logout"> Log Out</router-link>
+          <router-link to="/Logout"> Log Out</router-link>
+        </div>
+
+        <div class="col-12 offset-4" v-if="anonymous">
+          <span>Log in as: Anonymous /</span>
+
+          <router-link to="/Logout"> Log Out</router-link>
+        </div>
       </div>
-    </div>
-  </nav>
-  <nav>
-    <router-link to="/books">Books</router-link> |
-    <router-link to="/manga">Manga</router-link> |
-    <router-link to="/marvel">Marvel</router-link>
-  </nav>
-  <router-view />
+    </nav>
+    <nav>
+      <router-link to="/books">Books</router-link> |
+      <router-link to="/manga">Manga</router-link> |
+      <router-link to="/marvel">Marvel</router-link>
+    </nav>
+    <router-view />
+  </div>
 </template>
 
 <script setup>
@@ -76,5 +78,11 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.back {
+  background-color: burlywood;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 </style>

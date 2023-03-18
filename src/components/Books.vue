@@ -22,8 +22,8 @@
 			</div>
 		</main>
 
-		<button class="btn mt-5" @click="showMore()" v-if="isOpen">Show More Author</button>
-		<button class="btn mt-5" @click="showMoreBooks()" v-if="isOpen2">Show More books</button>
+		<button class="btn btn-dark p-2 mt-5" @click="showMore()" v-if="isOpen"><span class="m-5">Show More Authors</span></button>
+		<button class="btn btn-dark p-2 mt-5" @click="showMoreBooks()" v-if="isOpen2"><span class="m-5">Show More Books</span></button>
 	</div>
 </template>
 

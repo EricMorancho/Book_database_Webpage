@@ -5,11 +5,12 @@
     <div v-for="books in bookInfo2" v-if="user && !anonymous">
         <img :src="`https://covers.openlibrary.org/b/isbn/${books.canonical_isbn}-M.jpg`" alt="Book cover" @error="errorImg">
         
-        <p><span>TITLE: </span>{{ books.title }}</p>
-        <p v-for="author in books.authors"><span>AUTHOR: </span>{{ author }}</p>
-        <p><span>SYNOPSIS: </span>{{ books.summary }}</p>
-        <p><span>PAGES: </span>{{ books.page_count }}</p>
-        <p><span>COPYRIGHT:</span>{{ books.copyright }}</p>
+        <p class="mt-5"><strong>TITLE: </strong>{{ books.title }}</p>
+        <p v-for="author in books.authors"><strong>AUTHOR: </strong>{{ author }}</p>
+        <p><strong>SYNOPSIS: </strong></p>
+        <p class="ms-5 me-5 ps-5 pe-5 text-justify">{{ books.summary }}</p>
+        <p><strong>PAGES: </strong>{{ books.page_count }}</p>
+        <p><strong>COPYRIGHT: </strong>{{ books.copyright }}</p>
         
         <a :href="`https://www.isbnsearcher.com/books/${books.canonical_isbn}`" target="_blank"><h5>Link to ISBN Search</h5></a>
     </div>
@@ -19,8 +20,10 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
+import { mapState } from '@/lib';
 
 const route = useRoute();
+const {user, anonymous} = mapState()
 
 let bookInfo = ref('');
 let bookInfo2 = ref('');

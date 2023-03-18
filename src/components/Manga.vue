@@ -6,7 +6,7 @@
         
 		<form class="search-box" @submit.prevent="handleSearch">
 			<input type="search" class="search-field" 
-			placeholder="Search for an anime..." 
+			placeholder="Search for a Manga..." 
 			v-model="search_query"
 			required>
 		</form>
@@ -19,7 +19,7 @@
 			</div>
 		</main>
 
-		<button class="btn" @click="showMore()">Show More</button>
+		<button class="btn btn-dark mt-5 p-2" @click="showMore()"><span class="m-5">Show More Mangas</span></button>
     </div>
 </template>
   
@@ -35,7 +35,7 @@ const {user, anonymous} = mapState()
 let search_query = ref('');
 let animeList = ref('');
 let animeList2 = ref('');
-let limit = 20;
+let limit = 18;
 
 const handleSearch = async () => {
 	animeList.value = await fetch(`https://api.jikan.moe/v4/manga?q=${search_query.value}&limit=${limit}`)
@@ -52,7 +52,7 @@ const handleSearch = async () => {
 }
 
 const showMore = async () => {
-	limit += 20;
+	limit += 18;
 	animeList.value = await fetch(`https://api.jikan.moe/v4/manga?q=${search_query.value}&limit=${limit}`)
 	.then(res => res.json())
 	.then(data => {

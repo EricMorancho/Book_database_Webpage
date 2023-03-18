@@ -5,12 +5,14 @@
     <div v-if="user && !anonymous">
         <img :src="imagen" alt="">
 
-        <p><span>TITLE: </span>{{mangaInfo2.title}}</p>
-        <p v-for="author in mangaInfo2.authors"><span>AUTHOR: </span>{{ author.name }}</p>
-        <p><span>BACKGROUND: </span>{{mangaInfo2.background}}</p>
-        <p><span>SYNOPSIS: </span>{{mangaInfo2.synopsis}}</p>
-        <p><span>CHAPTERS: </span>{{mangaInfo2.chapters}}</p>
-        <p><span>STATUS: </span>{{mangaInfo2.status}}</p>
+        <p><strong>TITLE: </strong>{{mangaInfo2.title}}</p>
+        <p v-for="author in mangaInfo2.authors"><strong>AUTHOR: </strong>{{ author.name }}</p>
+        <p><strong>BACKGROUND: </strong></p>
+        <p class="ms-5 me-5 ps-5 pe-5 text-justify text-start">{{mangaInfo2.background}}</p>
+        <p><strong>SYNOPSIS: </strong></p>
+        <p class="ms-5 me-5 ps-5 pe-5 text-justify">{{mangaInfo2.synopsis}}</p>
+        <p><strong>CHAPTERS: </strong>{{mangaInfo2.chapters}}</p>
+        <p><strong>STATUS: </strong>{{mangaInfo2.status}}</p>
         <a :href="mangaInfo2.url" target="_blank"><h5>Link to MyAnimeList</h5></a>
     </div>
     <button class="btn btn-dark mt-5"><RouterLink to="/manga" class="text-white">Go back to Manga</RouterLink></button>

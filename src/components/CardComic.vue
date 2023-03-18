@@ -48,5 +48,8 @@ h3:hover {
     color: #24C444;
 }
 
+a {
+        text-decoration: none;
+    }
 
 </style>

@@ -2,8 +2,8 @@
     <div class="card">
         <RouterLink :to="{name: 'mangaInfo', params:{id: anime.mal_id}}">
             <img :src="anime.images.jpg.image_url" alt="Anime Poster Image">
-            <h3>{{ anime.title }}</h3>
-            <h3>{{ anime.mal_id }}</h3>
+            <h3><strong>{{ anime.title }}</strong></h3>
+            <h3>{{ anime.authors[0].name }}</h3>
         </RouterLink>
     </div>
 </template>
@@ -50,5 +50,8 @@
         color: #24C444;
     }
 
+    a {
+        text-decoration: none;
+    }
     
 </style>
