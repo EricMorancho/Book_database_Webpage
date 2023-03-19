@@ -2,18 +2,18 @@
   <div class="back">
     <nav class="container">
       <div class="row">
-        <div class="col-12 offset-5" v-if="register">
+        <div class="col-12 offset-md-5" v-if="register">
           <router-link to="/login">Login</router-link> /
           <router-link to="/register"> Register</router-link>
 
         </div>
-        <div class="col-12 offset-4" v-if="user && !anonymous">
+        <div class="col-12 offset-md-4" v-if="user && !anonymous">
           <span>Log in as: {{ user.email }} /</span>
 
           <router-link to="/Logout"> Log Out</router-link>
         </div>
 
-        <div class="col-12 offset-4" v-if="anonymous">
+        <div class="col-12 offset-md-4" v-if="anonymous">
           <span>Log in as: Anonymous /</span>
 
           <router-link to="/Logout"> Log Out</router-link>
@@ -30,15 +30,15 @@
 </template>
 
 <script setup>
-import { mapState, mapMutations } from '@/lib';
-import { onMounted } from 'vue';
-import { auth } from '@/firebase/config'
+import { mapState } from '@/lib';
+//import { onMounted } from 'vue';
+//import { auth } from '@/firebase/config'
 import { useStore } from 'vuex'
 
 const store = useStore()
 
 const { user, anonymous, register } = mapState()
-const { uncheckRegister } = mapMutations()
+
 
 
 //Preserva el usuario cuando se recarga la página, pero causa problemas con "Anonymous login"
