@@ -22,7 +22,7 @@
             </div>
 
             <!-- Submit button -->
-            <button class="btn btn-primary btn-block mb-4" @click="handlesubmit(), initializeUser()">Create Acount</button>
+            <button class="btn btn-dark btn-block mb-4" @click="handlesubmit(), initializeUser()">Create Acount</button>
             <div v-if="error">{{ error }}</div>
         </form>
     </div>
@@ -49,6 +49,7 @@ let error = ref(null)
 const handlesubmit = async () => {
     try {
         await store.dispatch('signup', { email: email.value, password: password.value })
+        console.log('you have been registered')
         router.push('/books')
     } catch (err) {
         error.value = err.message

@@ -1,16 +1,16 @@
 <template>
     <div class="card ">
-        <RouterLink :to="{name: 'comicInfo', params: {id: marvel.id}}">
-            <img :src="marvel.thumbnail.path+'.'+marvel.thumbnail.extension " alt="">
+        <RouterLink :to="{ name: 'comicInfo', params: { id: marvel.id } }">
+            <img :src="marvel.thumbnail.path + '.' + marvel.thumbnail.extension" alt="">
             <h3>{{ marvel.title }}</h3>
-        </RouterLink>   
+        </RouterLink>
     </div>
 </template>
 
 <script setup>
 
 const props = defineProps({
-marvel: Object
+    marvel: Object
 })
 
 
@@ -27,13 +27,13 @@ marvel: Object
 }
 
 img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 16px;
-        box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.15);
-        transition: 0.4s;
-    }
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.15);
+    transition: 0.4s;
+}
 
 h3 {
     padding: 16px;
@@ -49,7 +49,27 @@ h3:hover {
 }
 
 a {
-        text-decoration: none;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 100%;
+        padding: 0px 8px;
+        margin: 5px 1px 5px 1px;
+        border: 1px solid black;
     }
 
+    img {
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-top: 1rem;
+        box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.15);
+        transition: 0.4s;
+    }
+}
 </style>

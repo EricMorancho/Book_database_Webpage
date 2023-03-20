@@ -35,7 +35,7 @@ import { useRouter } from 'vue-router';
 import { mapState, mapMutations } from '@/lib';
 
 const router = useRouter()
-const {user, anonymous, register} = mapState()
+const {user, anonymous} = mapState()
 const {uncheckRegister} = mapMutations()
 
 let isOpen = ref(false)

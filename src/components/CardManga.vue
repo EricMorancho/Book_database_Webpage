@@ -1,19 +1,19 @@
 <template>
     <div class="card">
-        <RouterLink :to="{name: 'mangaInfo', params:{id: anime.mal_id}}">
+        <RouterLink :to="{ name: 'mangaInfo', params:{id: anime.mal_id}}">
             <img :src="anime.images.jpg.image_url" alt="Anime Poster Image">
             <h3><strong>{{ anime.title }}</strong></h3>
-            <h3>{{ anime.authors[0].name }}</h3>
         </RouterLink>
+        
     </div>
 </template>
 
 <script setup>
 
-
     const props = defineProps({
     anime: Object
 });
+
 
 
 </script>
@@ -53,5 +53,26 @@
     a {
         text-decoration: none;
     }
+
+    @media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 100%;
+        padding: 0px 8px;
+        margin: 5px 1px 5px 1px;
+        border: 1px solid black;
+    }
+
+    img {
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-top: 1rem;
+        box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.15);
+        transition: 0.4s;
+    }
+}
     
 </style>

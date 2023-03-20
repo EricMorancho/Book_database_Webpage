@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>Are you sure you want to Log Out?</h3>
-        <button class="btn btn-primary" @click=handleClick>Log Out</button>
+        <button class="btn btn-dark" @click=handleClick>Log Out</button>
     </div>
 </template>
 

@@ -24,7 +24,7 @@
 			</div>
 		</main>
 
-		<button class="btn" @click="showMore()">Show More</button>
+		<button class="btn btn-dark mt-5 p-2" @click="showMore()"><span class="m-5">Show More Marvel Comics</span></button>
         
 		
        

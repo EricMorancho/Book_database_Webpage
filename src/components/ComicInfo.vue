@@ -11,16 +11,16 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-6 mt-5 border border-dark">
-                            <h5 class="mt-2">IMFORMATION:</h5>
+                        <div class="col-11 col-md-6 mt-5 border border-dark">
+                            <h5 class="mt-2"><strong>IMFORMATION:</strong></h5>
                             <p class="mt-5"><strong>TITLE: </strong>{{ comic.title }}</p>
                             <p class="mt-5"><strong>SERIE: </strong>{{ comic.series.name }}</p>
                             <p class="mt-5"><strong>Pages: </strong>{{ comic.pageCount }}</p>
                         </div>
 
 
-                        <div class="col-6 mt-5 border border-dark">
-                            <h5 class="mt-2 mb-4">CREATORS:</h5>
+                        <div class="col-11 col-md-6 mt-5 border border-dark">
+                            <h5 class="mt-2 mb-4"><strong>CREATORS:</strong></h5>
                             <div v-for="creators in comic.creators.items">
                                 <p><strong>{{ creators.role }}:</strong> {{ creators.name }}</p>
                             </div>

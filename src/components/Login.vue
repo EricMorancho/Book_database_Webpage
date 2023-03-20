@@ -1,9 +1,9 @@
 <template>
         <div class="container">
             <div class="row">
-                <form @submit.prevent="submit" class="col-6 normalLogin">
-                    <div>
-                        <h5 class="mb-4 mt-5">Login into your account:</h5>
+                <form @submit.prevent="submit" class="col-12 col-md-6 normalLogin">
+                    <div class="text-start text-justify">
+                        <h5 class="mb-4 mt-5 text-center">Login into your account:</h5>
 
                         <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Search for Books</ul>
                         <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Search for Manga</ul>
@@ -40,7 +40,7 @@
                     </div>
 
                     <!-- Submit button -->
-                    <button class="btn btn-primary btn-block mb-4" @click="handlesubmit(), initializeUser()">Sign
+                    <button class="btn btn-dark btn-block mb-4" @click="handlesubmit(), initializeUser()">Sign
                         in</button>
 
                     <!-- Register buttons -->
@@ -52,9 +52,9 @@
 
                 </form>
 
-                <div class="col-6 anonymousLogin">
-                    <div>
-                        <h5 class="mb-4 mt-5">Login Anonymously:</h5>
+                <div class="col-12 col-md-6 anonymousLogin">
+                    <div class="text-start text-justify">
+                        <h5 class="mb-4 mt-5 text-center">Login Anonymously:</h5>
 
                         <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Search for Books</ul>
                         <ul><img src="@/assets/tickcircleflat_105996.svg" alt="">Search for Manga</ul>
@@ -64,7 +64,7 @@
                         <ul><img src="@/assets/crosscircleflat_106051.svg" alt=""> Full access to Marvel Comics information
                         </ul>
                     </div>
-                    <button @click="anonymousLogin()" v-if="!anonymous" class="mt-5">Anonymous identification</button>
+                    <button @click="anonymousLogin()" v-if="!anonymous" class=" btn btn-dark mt-5 mb-5">Anonymous identification</button>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 import { useStore } from 'vuex'
 import { mapState, mapMutations } from '@/lib';

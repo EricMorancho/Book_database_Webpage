@@ -7,9 +7,9 @@
                 <h5 class="mt-4 mb-4">Found what your favourite author has wrote recently</h5>
                 <h5 class="mt-4 mb-4">Discover hidden literary gems or discover the background of your favourite books</h5>
                 <h5 class="mt-4 mb-4">All this just by login in our webside... are you ready?</h5>
-                <img src="@/assets/Books_Silhouette.svg" alt="" class="m-5">
-                <img src="@/assets/Manga.svg" alt="" class="m-5">
-                <img src="@/assets/Marvel_Logo.svg" alt="" class="m-5">
+                <img src="@/assets/Books_Silhouette.svg" alt="" class="mt-3 mb-3 m-md-5">
+                <img src="@/assets/Manga.svg" alt="" class="mt-5 mb-3 m-md-5">
+                <img src="@/assets/Marvel_Logo.svg" alt="" class="mt-5 mb-5 m-md-5">
 
 
                 <div class="mb-5">
