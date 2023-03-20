@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/76114369/226410488-2a1a47b7-4605-4e60-
 
 
 
--Once logged in you can search for a book title, book author, manga title or Marvel comic title:
+Once logged in you can search for a book title, book author, manga title or Marvel comic title:
 
 
 
