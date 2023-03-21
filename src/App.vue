@@ -20,7 +20,7 @@
         </div>
       </div>
     </nav>
-    <nav class="col-12">
+    <nav class="col-12 font">
       <router-link to="/books">Books</router-link> |
       <router-link to="/manga">Manga</router-link> |
       <router-link to="/marvel">Marvel</router-link>
@@ -63,11 +63,12 @@ onMounted(() => {
 </script>
 
 <style>
-
-
+@import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'KoHo', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -101,5 +102,9 @@ nav a.router-link-exact-active {
 
 .text {
     text-align: justify;
+}
+
+.font{
+  font-family: 'Beth Ellen', cursive;
 }
 </style>

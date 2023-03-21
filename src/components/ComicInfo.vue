@@ -65,6 +65,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
+*{
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+}
+
 img {
     height: 30rem;
 }

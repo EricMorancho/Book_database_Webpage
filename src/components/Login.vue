@@ -125,6 +125,8 @@ const initializeUser = () => {
 </script>
 
 <style>
+    
+
     .normalLogin {
         background-color: rgb(241, 200, 185);
     }

@@ -24,7 +24,7 @@
 			</div>
 		</main>
 
-		<button class="btn btn-dark mt-5 p-2" @click="showMore()"><span class="m-5">Show More Marvel Comics</span></button>
+		<button class="btn btn-dark mt-5 p-2" @click="showMore()" v-if="showButton"><span class="m-5">Show More Marvel Comics</span></button>
         
 		
        
@@ -47,19 +47,21 @@ let comicList2 = ref('');
 let search_query = ref('')
 let num = 20
 
+let showButton = ref(false)
+
+const hola = () => {
+	showButton = true
+}
+
 
 
 const handleSearch = async () => {
 	comicList.value = await fetch(`https://gateway.marvel.com:443/v1/public/comics?title=${search_query.value}&limit=${num}&ts=1&apikey=573085dec0a3a2c807faa226858f8f7a&hash=882d6694afbc6ec56320ac77f2417749`)
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
-		console.log(search_query.value)
 		comicList.value = data
-		console.log(comicList.value)
 		comicList2.value = comicList.value.data.results
-		console.log(comicList.value.data.results)
-		console.log(comicList2.value)
+		hola()
 		
 	})
 	.catch(err => console.error(err));
@@ -97,7 +99,7 @@ onMounted(() => {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Fira Sans', sans-serif;
+	font-family: 'KoHo', sans-serif;
 }
 
 a {

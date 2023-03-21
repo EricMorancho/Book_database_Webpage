@@ -52,6 +52,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+*{
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+}
 a {
     text-decoration: none;
 }
