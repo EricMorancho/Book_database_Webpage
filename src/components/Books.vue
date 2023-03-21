@@ -4,12 +4,12 @@
 			<h1>The <strong>Book</strong> Database</h1>
 		</header>
 		<div ref="wrapperEl" class="mb-5">
-			<h3 @click="open()" class="mt-1">Search by Author</h3>
+			<h3 @click="open()" class="mt-1 pointer">Search by Author</h3>
 			<form class="search-box" @submit.prevent="handleSearch" v-if="isOpen">
 				<input type="search" class="search-field" placeholder="Search for an author..." v-model="search_query"
 					required>
 			</form>
-			<h3 @click="open2()" class="mt-5 mb-5">Search by Book Title</h3>
+			<h3 @click="open2()" class="mt-5 mb-5 pointer">Search by Book Title</h3>
 			<form class="search-box" @submit.prevent="handleSearchBook" v-if="isOpen2">
 				<input type="search" class="search-field" placeholder="Search for a book title..." v-model="search_query2"
 					required>
@@ -137,6 +137,11 @@ onMounted(() => {
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'KoHo', sans-serif;
+}
+
+.pointer {
+	cursor: pointer;
+	user-select:none
 }
 
 a {
